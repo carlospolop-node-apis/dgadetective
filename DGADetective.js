@@ -3,8 +3,8 @@ const request = require('request');
 //Get largest domain
 function getDomain(domain){
     var dom = "";
-    host.split(".").forEach(function (domain){
-        if (dom.length <= domain.length) dom = domain;
+    domain.split(".").forEach(function (doma){
+        if (dom.length <= doma.length) dom = doma;
     }); // Get largest subdomain for checking DGA
     return dom;
 }
