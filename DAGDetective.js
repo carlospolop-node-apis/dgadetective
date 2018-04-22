@@ -188,7 +188,7 @@ function isDGAhighSync(domain){
     return checkDGA(domain) > 150 ? true : false;
 }
 
-exports.checDGA = checDGA;
+exports.checkDGA = checkDGA;
 
 exports.checkDGASync = checkDGASync;
 exports.isDGAlowSync = isDGAlowSync;
