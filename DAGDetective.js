@@ -1,5 +1,14 @@
 const request = require('request');
 
+//Get largest domain
+function getDomain(domain){
+    var dom = "";
+    host.split(".").forEach(function (domain){
+        if (dom.length <= domain.length) dom = domain;
+    }); // Get largest subdomain for checking DGA
+    return dom;
+}
+
 // Check if domain is Hexadecimal
 function isHex(domain){
     var h = domain.match(/[\dabcdef]+/i);
@@ -87,6 +96,7 @@ Algorithm to detect DGA statically:
 
 // Check if domain could be created using DGA
 function checkDGASync(domain){
+    domain = getDomain(domain);
     var val = 0;
 
     if (domain.length > 10){ 
@@ -157,6 +167,7 @@ function checkDGASync(domain){
 }
 
 function checkDGA(domain){
+    domain = getDomain(domain);
     var promise = new Promise(function(resolve, reject) {
         var val = checkDGASync(domain);
 

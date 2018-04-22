@@ -1,6 +1,6 @@
 {
   "name": "dgadetective",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Check if a domain has been created using a Domain Generation Algorithm. Usefull to discover malware and trackers.",
   "main": "DAGDetective.js",
   "scripts": {
