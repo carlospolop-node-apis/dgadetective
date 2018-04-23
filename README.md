@@ -21,7 +21,7 @@ Algorithm to detect DGA:
 
 ## How to use
 
-The function `checkDGA(DOMAIN)` will return a value, if this value is greater than 100, probably the domain was created using DGA.
+The function `checkDGA(DOMAIN)` will return a promise that will return a value. If this value is greater than 100, probably the domain was created using DGA.
 
 ### Asynchronous
 ```javascript
