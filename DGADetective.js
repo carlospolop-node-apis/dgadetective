@@ -170,18 +170,19 @@ function checkDGA(domain){
     domain = getDomain(domain);
     var promise = new Promise(function(resolve, reject) {
         var val = checkDGASync(domain);
-
-        var url = "https://www.ecosia.org/search?q="+domain;
-        request({url: url}, function (error, response, body) {
-            if (error) reject(Error("Error checking duckduckgo: "+error));
-            if (body){
-                if (body.indexOf(">No results found<") != -1){
-                    val += 50;
-                    ///-console.log("No results in ecosia: +50");
+        if (val > 50){
+            var url = "https://www.ecosia.org/search?q="+domain;
+            request({url: url}, function (error, response, body) {
+                if (error) reject(Error("Error checking ecosia: "+error));
+                if (body){
+                    if (body.indexOf(">No results found<") != -1){
+                        val += 50;
+                        ///-console.log("No results in ecosia: +50");
+                    }
+                    resolve(val);
                 }
-                resolve(val);
-            }
-        });
+            });
+        } else resolve(val);
     });
     return promise;
 }
