@@ -140,7 +140,7 @@ function checkDGASync(domain){
     //Check if several repetitions of a char
     checkRepeated(domain).forEach(function(num_rep){
         if (num_rep > 4){
-            val += num_rep*num_rep*2;
+            val += num_rep*num_rep*1.5;
             ///-console.log("-- Chars repeated: +" +num_rep*num_rep*2);
         }
     });
